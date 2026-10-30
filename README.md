@@ -178,7 +178,7 @@ The directory structure is a recommended layout and can be adjusted to match the
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/24it022-kalpesh/AWDF_PRA_6.git
+git clone https://github.com/24it009-Kishan/webdevlopment
 cd event-management-system
 ```
 
