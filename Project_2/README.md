@@ -310,7 +310,7 @@ Upon completion, the project demonstrates the ability to:
 - **Course Code:** ITUE301
 - **Project:** Event Management System
 - **Practical Coverage:** Weeks 1â€“11
-- **Repository:** https://github.com/24it009-Kishan/webdevlopment
+- **Repository:** https://github.com/24it009-Kishan/webdevlopment/tree/main/Project_2
 
 ## Author
 
