@@ -1,45 +1,74 @@
 # Student Portfolio
 
-**Student ID:** 24IT009 · Advanced Web Development Frameworks (ITUE301)
+**Student ID:** 24IT009  
+**Subject:** Advanced Web Development Frameworks (ITUE301)
 
-Ek j project: React (Vite) portfolio frontend + Node/Express backend with MongoDB (Mongoose).
+A single integrated project consisting of a **React (Vite) Portfolio Frontend** and a **Node.js/Express Backend** connected to MongoDB using Mongoose.
 
-## Folder structure
+## Folder Structure
 
 ```text
 .
 ├── src/                 # React frontend (components, pages, App, main, styles)
-├── models/Task.js       # Mongoose Task schema
-├── middleware/          # errorHandler.js
-├── server.js            # Express + MongoDB Task API
+├── models/
+│   └── Task.js          # Mongoose Task schema
+├── middleware/
+│   └── errorHandler.js  # Error-handling middleware
+├── server.js            # Express server and MongoDB Task API
 ├── index.html
 ├── vite.config.mjs
 ├── package.json
 └── .env.example
 ```
 
-## Run
+## Installation and Setup
+
+Install the project dependencies:
 
 ```bash
 npm install
-copy .env.example .env      # Mac/Linux: cp .env.example .env
 ```
 
-MongoDB chalu rakho, pachi be terminal ma:
+Create a `.env` file from the example file:
 
 ```bash
-npm run server   # API       -> http://localhost:5000
-npm run dev      # Frontend  -> http://localhost:5173
+copy .env.example .env
 ```
 
-## Task API
+For Mac/Linux:
 
-| Method | URL        | Purpose        |
-| ------ | ---------- | -------------- |
-| GET    | /tasks     | Get all tasks  |
-| GET    | /tasks/:id | Get task by ID |
-| POST   | /tasks     | Create task    |
-| PUT    | /tasks/:id | Update task    |
-| DELETE | /tasks/:id | Delete task    |
+```bash
+cp .env.example .env
+```
 
-Never commit `.env`.
+Make sure MongoDB is running. Then open two separate terminals.
+
+**Terminal 1 – Backend Server**
+
+```bash
+npm run server
+```
+
+API URL: `http://localhost:5000`
+
+**Terminal 2 – Frontend Development Server**
+
+```bash
+npm run dev
+```
+
+Frontend URL: `http://localhost:5173`
+
+## Task API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/tasks` | Retrieve all tasks |
+| GET | `/tasks/:id` | Retrieve a task by ID |
+| POST | `/tasks` | Create a new task |
+| PUT | `/tasks/:id` | Update an existing task |
+| DELETE | `/tasks/:id` | Delete a task |
+
+## Security Note
+
+**Never commit the `.env` file to GitHub.** It may contain sensitive information such as database credentials and secret keys. Use `.env.example` to share the required environment variable structure.
