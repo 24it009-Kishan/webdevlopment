@@ -1,0 +1,42 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #15151b;
+  color: #dedee8;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+a { color: #c6a7ff; }
+.navbar { padding: 12px; }
+.nav-inner { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.brand { display: none; }
+.nav-links { display: flex; flex-direction: column; gap: 5px; }
+.nav-links a { color: #c7a5ff; }
+.container { width: min(900px, 92%); margin: 22px auto; }
+.portfolio-home { max-width: 760px; margin: 0 auto; }
+.portfolio-header { padding: 20px 12px; margin: 12px 0 0; color: white; }
+.portfolio-header h1 { margin: 0 0 12px; font-size: 2rem; }
+.portfolio-header p { margin: 0; }
+.portfolio-actions { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+button { cursor: pointer; padding: 5px 10px; }
+.portfolio-section { margin: 6px auto; }
+.portfolio-section h2 { font-size: 1.1rem; margin: 5px; }
+.portfolio-section p { margin: 8px; }
+.plain-list { text-align: left; display: inline-block; line-height: 1.6; }
+.portfolio-footer { border-top: 1px solid #aaa; margin-top: 20px; padding: 12px; font-size: .9rem; }
+.portfolio-footer p { margin: 5px; }
+.projects-page h1, .contact-page h1 { font-size: 2rem; }
+.repo-search { width: 210px; padding: 8px; margin: 12px auto 24px; }
+.repo-list { display: flex; flex-direction: column; gap: 12px; }
+.repo-item { border: 1px solid #777; border-radius: 7px; padding: 16px; }
+.repo-item h2 { font-size: 1rem; }
+.repo-item h2 span { font-size: .8rem; }
+.repo-item p { font-size: .9rem; }
+.spinner-wrap { padding: 25px; }
+.error-message { color: #ff7777; padding: 20px; }
+.contact-page input { padding: 8px; }
+.message-preview { min-height: 22px; }
+@media (min-width: 650px) {
+  .repo-item { padding: 20px; }
+}
