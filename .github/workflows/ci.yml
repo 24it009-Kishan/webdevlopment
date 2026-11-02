@@ -1,3 +1,4 @@
+
 name: Project 2 CI Pipeline
 
 on:
@@ -15,6 +16,7 @@ on:
 
 jobs:
   frontend-build:
+    name: Frontend Build
     runs-on: ubuntu-latest
 
     steps:
@@ -35,6 +37,7 @@ jobs:
         run: npm run build
 
   backend-test:
+    name: Backend Testing
     runs-on: ubuntu-latest
 
     steps:
@@ -55,3 +58,4 @@ jobs:
         run: npm test -- --passWithNoTests
         env:
           JWT_SECRET: ci_test_secret
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
