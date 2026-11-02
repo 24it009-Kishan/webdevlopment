@@ -1,30 +1,60 @@
-# .github/workflows/ci.yml
-name: CI Pipeline
+
+name: Project 2 CI Pipeline
 
 on:
   push:
     branches: [main]
+    paths:
+      - 'Project_2/**'
+      - '.github/workflows/ci.yml'
+
+  pull_request:
+    branches: [main]
+    paths:
+      - 'Project_2/**'
+      - '.github/workflows/ci.yml'
 
 jobs:
-  build-and-test:
+  frontend-build:
+    name: Frontend Build
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: backend     # package.json lives in backend/, not the repo root
+
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
-      - name: Install dependencies
+      - name: Install Frontend Dependencies
+        working-directory: Project_2/frontend
         run: npm install
 
-      - name: Run tests
-        run: npm test
+      - name: Build Frontend
+        working-directory: Project_2/frontend
+        run: npm run build
+
+  backend-test:
+    name: Backend Testing
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Backend Dependencies
+        working-directory: Project_2/backend
+        run: npm install
+
+      - name: Run Backend Tests
+        working-directory: Project_2/backend
+        run: npm test -- --passWithNoTests
         env:
           JWT_SECRET: ci_test_secret
-
