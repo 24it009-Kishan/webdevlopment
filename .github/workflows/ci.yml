@@ -1,4 +1,3 @@
-
 name: Project 2 CI Pipeline
 
 on:
@@ -16,7 +15,6 @@ on:
 
 jobs:
   frontend-build:
-    name: Frontend Build
     runs-on: ubuntu-latest
 
     steps:
@@ -37,7 +35,6 @@ jobs:
         run: npm run build
 
   backend-test:
-    name: Backend Testing
     runs-on: ubuntu-latest
 
     steps:
